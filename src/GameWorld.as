@@ -14,6 +14,7 @@ package
 	public class GameWorld extends World 
 	{
 		private var square:Entity;
+		[Embed(source = "../Assets/Levels/TestLevel.oel", mimeType = "application/octet-stream")] private const LEVEL:Class;
 		
 		public function GameWorld() 
 		{
@@ -23,8 +24,9 @@ package
 		override public function begin():void 
 		{
 			var image:Image = new Image(new BitmapData(16, 16, true, 0xFFFFFFFF));
-			square = new Entity(0, 0, image);
-			add(square);
+			//square = new Entity(0, 0, image);
+			//add(square);
+			add(new Level(LEVEL));
 			add(new Player);
 			add(new Enemy);
 			add(new Enemy);
@@ -34,6 +36,7 @@ package
 		
 		override public function update():void 
 		{
+			/*
 			square.x = Input.mouseX;
 			square.y = Input.mouseY;
 			if (Input.mousePressed)
@@ -41,6 +44,7 @@ package
 					Image(square.graphic).color = FP.rand(0xFFFFFFFF);
 					trace("GameWorld - update() - mousePressed");
 			}
+			*/
 			super.update();
 		}
 		
