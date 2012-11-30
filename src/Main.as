@@ -19,7 +19,7 @@ package
 		
 		override public function init():void 
 		{
-			trace("Main--Init()");
+			trace("Main - Init()");
 			FP.world = new GameWorld();
 			super.init();
 		}

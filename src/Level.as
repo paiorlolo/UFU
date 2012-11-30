@@ -38,23 +38,22 @@ package
 			var dataString:String = rawData.readUTFBytes( rawData.length );			
 			var xmlData:XML = new XML( dataString );
 			
-			var dataList:XMLList;
+			
 			var dataElement:XML;
 			
-			dataList = xmlData.Piedras.tile;	
 			
-			for each ( dataElement in dataList )
+			for (var i:int = 0; i < xmlData.children().length(); i++)
 			{
-				_tiles.setTile( uint(dataElement.@x), uint(dataElement.@y), uint(dataElement.@id));
+				var  node:XML = xmlData.children()[i];
+				var dataList:XMLList;
+				dataList = node.tile;
+				
+				if ( dataList != null)
+				{	 
+					for each ( var element:XML in dataList )
+					_tiles.setTile( uint(element.@x), uint(element.@y), uint(element.@id));
+				}
 			}
-			
-			dataList = xmlData.Fuego.tile;
-			
-			for each ( dataElement in dataList)
-			{
-				_tiles.setTile( uint(dataElement.@x), uint(dataElement.@y), uint(dataElement.@id));
-			}
-
 			
 		}
 	}
