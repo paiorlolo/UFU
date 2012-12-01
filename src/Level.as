@@ -41,7 +41,7 @@ package
 			
 			var dataElement:XML;
 			
-			
+			// Iterate throw all the elements of the level and set the corresponding tiles
 			for (var i:int = 0; i < xmlData.children().length(); i++)
 			{
 				var  node:XML = xmlData.children()[i];
