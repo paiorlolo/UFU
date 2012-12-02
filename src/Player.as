@@ -14,6 +14,7 @@ package
 	{
 		[Embed(source = "../Assets/Link/LinkFrontBlue.gif")] private const PLAYER_GRAPHIC:Class;
 		private var image:Image;
+		private const velocity:int = 100;
 		
 		public function Player() 
 		{
@@ -25,22 +26,8 @@ package
 		
 		override public function update():void 
 		{
-			if (Input.check(Key.RIGHT))
-			{
-				x += 100 * FP.elapsed;
-			}
-			if (Input.check(Key.LEFT))
-			{
-				x -= 100 * FP.elapsed;
-			}
-			if (Input.check(Key.UP))
-			{
-				y -= 100 * FP.elapsed;
-			}
-			if (Input.check(Key.DOWN))
-			{
-				y += 100 * FP.elapsed;
-			}
+			
+			handleControls();
 			
 			if (collide("enemy", x , y))
 			{
@@ -52,6 +39,30 @@ package
 			}
 			
 			super.update();
+		}
+		
+		private function handleControls():void
+		{
+			// This could be in a external class
+			// could return a bool for each control that we want to check
+			// and do what we want.
+			if (Input.check(Key.RIGHT))
+			{
+				x += velocity * FP.elapsed;
+			}
+			if (Input.check(Key.LEFT))
+			{
+				x -= velocity * FP.elapsed;
+			}
+			if (Input.check(Key.UP))
+			{
+				y -= velocity * FP.elapsed;
+			}
+			if (Input.check(Key.DOWN))
+			{
+				y += velocity * FP.elapsed;
+			}
+			
 		}
 	}
 

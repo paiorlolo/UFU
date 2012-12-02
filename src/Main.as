@@ -11,10 +11,11 @@ package
 		
 		public function Main():void 
 		{
-			super(640, 480);
+			GameConfiguration.setGameWidth(480);
+			GameConfiguration.setGameHeight(640);
+			super(GameConfiguration.getGameHeight(), GameConfiguration.getGameWidth());
 			//FP.screen.scale = 2;
-			//FP.console.enable();
-			
+			//FP.console.enable();			
 		}
 		
 		override public function init():void 
