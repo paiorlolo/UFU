@@ -9,14 +9,11 @@ package
 	 * @author Phantom & Lolo
 	 */
 	public class Enemy extends Entity
-	{
-			
+	{			
 		public function Enemy() 
 		{
 			
-		}
-		
-		
+		}	
 		
 	}
 

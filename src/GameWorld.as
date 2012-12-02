@@ -1,5 +1,6 @@
 package
 {
+	import net.flashpunk.graphics.Image;
 	import net.flashpunk.World;
 	
 	/**
@@ -16,7 +17,7 @@ package
 		override public function begin():void
 		{
 			add(new Level(AssetsManager.TEST_LEVEL));
-			add(new Player);
+			add(new Player(AssetsManager.PLAYER_GRAPHIC));
 			super.begin();
 		}
 		

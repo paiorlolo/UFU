@@ -15,8 +15,8 @@ package
 		}
 		
 		/**
-		 * @param
-		 * @return
+		 * Set the game windows width in pixels
+		 * @param the game windows width
 		 */
 		static public function setGameWidth(width:int):void
 		{
@@ -24,8 +24,7 @@ package
 		}
 		
 		/**
-		 * @param
-		 * @return
+		 * @return the game windows width in pixels
 		 */
 		static public function getGameWidth():int
 		{
@@ -33,8 +32,8 @@ package
 		}
 		
 		/**
-		 * @param
-		 * @return
+		 * set the game windows height in pixels
+		 * @param the game windows height
 		 */
 		static public function setGameHeight(height:int):void
 		{
@@ -42,8 +41,7 @@ package
 		}
 		
 		/**
-		 * @param
-		 * @return
+		 * @return the game windows height
 		 */
 		static public function getGameHeight():int
 		{

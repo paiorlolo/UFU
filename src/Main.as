@@ -25,6 +25,11 @@ package
 			super.init();
 		}
 		
+		//Tal vez estaria bueno crear una clase AppManager
+		//la cual se encargue de inicializar todas las configuraciones y componentes
+		// que el juego necesite. 
+		// por ejemplo los diferentes niveles, diferentes configuraciones, etc.
+		
 		
 	}
 	

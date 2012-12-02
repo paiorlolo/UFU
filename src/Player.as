@@ -1,5 +1,6 @@
 package  
 {
+	import net.flashpunk.Graphic;
 	import net.flashpunk.Entity;
 	import net.flashpunk.FP;
 	import net.flashpunk.graphics.Image;
@@ -12,16 +13,15 @@ package
 	 */
 	public class Player extends Entity 
 	{
-		[Embed(source = "../Assets/Link/LinkFrontBlue.gif")] private const PLAYER_GRAPHIC:Class;
 		private var image:Image;
 		private const velocity:int = 100;
 		
-		public function Player() 
+		public function Player(image:Class) 
 		{
-			image = new Image(PLAYER_GRAPHIC);
-			graphic = image;
-			setHitbox(16, 16, 0, 0);
-			type = "player";
+			setImage(new Image(image));
+			setGraphic(getImage());
+			setHitbox(getImage().height, getImage().width, 0, 0);
+			setCollisionType("player");
 		}
 		
 		override public function update():void 
@@ -63,6 +63,48 @@ package
 				y += velocity * FP.elapsed;
 			}
 			
+		}
+		
+		public function setImage(image:Image):void
+		{
+			this.image = image;
+		}
+		
+		public function getImage():Image
+		{
+			return image;
+		}
+		
+		/**
+		 * Set the graphical component to be rendered
+		 * @param the image to be rendered
+		 */
+		public function setGraphic(image:Image):void
+		{
+			graphic = image;
+		}
+		
+		public function getGraphic():Graphic
+		{
+			return graphic;
+		}
+		
+		/**
+		 * @param
+		 * @return
+		 */
+		public function setCollisionType(type:String):void
+		{
+			this.type = type;
+		}
+		
+		/**
+		 * @param
+		 * @return
+		 */
+		public function getCollisionType():String
+		{
+			return type;
 		}
 	}
 
